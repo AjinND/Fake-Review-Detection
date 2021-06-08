@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fake Review Detector</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Zen+Dots&display=swap"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='custom.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center">
+        <!-- nav-menu -->
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li class="active"><a href="/index">Home</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <div id="main">
+      <div class="container container-custom">
+        <h1 style="font-size: 4.5rem">Fake Review Detection</h1>
+        <p>Paste the link of first review page</p>
+        <form method="POST" action="http://127.0.0.1:5000/index">
+          <div class="form-group">
+            <textarea
+              name="content"
+              placeholder="Link to review page ...."
+              rows="5"
+              cols="109"
+            ></textarea>
+            <input class="btn btn-primary btn-custom" type="submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

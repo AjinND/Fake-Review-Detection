@@ -1,0 +1,129 @@
+p {
+  margin-top: 2rem;
+  font-family: "Inconsolata", monospace;
+}
+
+.btn-custom {
+  width: 110px !important;
+  margin-top: 2rem !important;
+  margin: auto !important;
+  display: block !important;
+}
+
+#header {
+  transition: all 0.5s;
+  padding: 20px 0;
+  background: #212529;
+}
+.d-flex {
+  background-color: #212529;
+}
+
+.nav-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu > ul {
+  display: flex;
+}
+
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+  padding: 10px 0 10px 28px;
+}
+
+.nav-menu a {
+  display: block;
+  position: relative;
+  color: #fff;
+  transition: 0.3s;
+  font-size: 25px;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+.nav-menu a:hover,
+.nav-menu .active > a,
+.nav-menu li:hover > a {
+  color: #5cb874;
+}
+
+h1 {
+  font-size: 4.5rem;
+  text-align: center;
+}
+
+textarea {
+  width: 100% !important;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+.container-custom {
+  margin-top: 90px;
+}
+
+/*About*/
+
+.section-title {
+  text-align: center;
+  margin-top: 90px;
+  padding-bottom: 30px;
+}
+
+.about .content h3 {
+  font-weight: 500;
+  font-size: 28px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 4px;
+  background: #5cb874;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.section-title h2:hover {
+  color: #5cb874;
+  transition: 1s;
+}
+
+.section-title p {
+  text-align: justify;
+  margin-bottom: 0;
+  font-size: 18px;
+  color: #fff;
+}
+.row p {
+  text-align: justify;
+  margin-bottom: 0;
+  font-size: 18px;
+  color: #fff;
+}

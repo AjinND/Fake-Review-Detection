@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fake Review Detector</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Zen+Dots&display=swap"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='custom.css') }}"
+    />
+  </head>
+  <body>
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center">
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li><a href="/index">Home</a></li>
+            <li class="active"><a href="/about">About</a></li>
+          </ul>
+        </nav>
+        <!-- .nav-menu -->
+      </div>
+    </header>
+    <main id="main">
+      <!-- ======= About Us Section ======= -->
+      <section id="about" class="about">
+        <div class="container container-custom">
+          <div class="section-title">
+            <h2>Fake Review Detector</h2>
+            <p>
+              The project Fake Review Detection is aimed to detect the fake
+              reviews present in the e-commerce website, so as to help the
+              customers to find the amount of fake and real reviews present. In
+              most cases, reviews posted may be genuine, but there may be some
+              exceptions where managers hire people to post fake reviews, either
+              praise or demote the product, so as to increase their margin of
+              profit. We aim at finding these type of reviews with the help of
+              Machine Learning techniques. Fake Review Detector is a product
+              that classifies the reviews present in the e-commerce site as
+              "Real" or "Fake".
+            </p>
+          </div>
+
+          <div class="row">
+            <div
+              class="col-lg-6 order-1 order-lg-2 d-flex justify-content-center"
+            >
+              <img
+                src="{{ url_for('static', filename='ROC_curve.png') }}"
+                class="img-fluid"
+                alt="roc_curve"
+              />
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+              <h3>Classifier</h3>
+              <p class="font-italic">
+                The project uses Navie Bayes Classifier for the review
+                classification. The classifier is a probabilistic classifier
+                which classifies the data based on the probability. First step
+                is to collect the data from the e-commerce website using a
+                crawler. The it performs a sentimental analysis to check whether
+                the reviews are of positive sentiment or not. It then classifies
+                the reviews as fake or real.
+              </p>
+              <p>
+                The classifier is trained with a dataset containing 21000 datas.
+                With these datas, the classifier gives an accuracy of about 80%.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End About Us Section -->
+    </main>
+  </body>
+</html>

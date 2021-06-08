@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fake Review Detector</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Zen+Dots&display=swap"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='custom.css') }}"
+    />
+
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+
+    <script type="text/javascript">
+      //draw chart
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Cases','Value',],
+           {% for key, value in data.items() %}
+             ['{{ key }}', {{ value }}],
+           {% endfor %}
+         ]);
+
+        var options = {
+          title: 'Fake Reviews Graph',
+          is3D: true,
+          slices: {
+            1: {offset: 0.2},
+          }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center">
+        <!-- nav-menu -->
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!--Graph-->
+    <div class="container-custom text-center justify-content-center">
+      <h3 class="m-lg-4" style="text-transform: capitalize">Result</h3>
+      <div
+        id="piechart_3d"
+        class="container d-flex justify-content-center"
+        style="height: 500px"
+      ></div>
+      <p style="font-size: large">
+        The number of Fake reviews present in the website is: {{values}}
+      </p>
+    </div>
+  </body>
+</html>
